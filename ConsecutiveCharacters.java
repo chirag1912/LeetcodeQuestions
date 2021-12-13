@@ -4,6 +4,25 @@
 
 class Solution {
     public int maxPower(String s) {
+    char chrArr[]=s.toCharArray();
+        int count=1;
+        int max=1;
+        
+        for(int i=0;i<chrArr.length-1;i++){
+            if(chrArr[i]==chrArr[i+1]){
+                count++;
+                max=Math.max(count,max);
+            }else{      //Make count==1 when the comparison breaks;
+                count=1;
+            }
+        }
+        return max;
+    }
+}
+
+
+class Solution {
+    public int maxPower(String s) {
         
         char chArr[]=new char[s.length()];
         
